@@ -1,6 +1,6 @@
 # Go Channel Select Linter
 ## Overview
-This is a simple custom Go linter designed to detect specific usage of the select statement inside a for loop, where channels are received without checking if the channel is closed. The linter raises a warning when the following pattern is found:
+This is a simple custom Go linter designed to detect specific usage of the select statement inside a for loop, where channels are received without checking if the channel is closed. A receive [operation](https://go.dev/ref/spec#Receive_operator) on a closed channel can always proceed immediately, yielding the element type's zero value after any previously sent values have been received. The linter raises a warning when the following pattern is found:
 
 go
 ```go
@@ -12,7 +12,7 @@ for {
 }
 ```
 
-The linter suggests using the comma-ok idiom to check whether the channel is closed:
+The linter suggests adding the second variable to handle the channel closing while the for statement is still running.
 
 ```go
 for {
@@ -82,10 +82,3 @@ You will receive the following warning:
 
 `Warning: use 'msg, closed := <-msgCh' instead at main.go:8:9`
 
-## Contribution
-Feel free to open issues or submit pull requests if you find any bugs or want to suggest improvements.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Enjoy using the Go Channel Select Linter!
