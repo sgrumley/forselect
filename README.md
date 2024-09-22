@@ -45,13 +45,16 @@ This will create an executable named linter.
 The linter can be used via the [Module Plugin System](https://golangci-lint.run/plugins/module-plugins) or via [Go Plugin System](https://golangci-lint.run/plugins/go-plugins)
 ```bash
 ./linter yourfile.go
-The linter will scan the file and print warnings in the following format if it detects any issues:
+The linter will scan all files in the directory and print warnings in the following format if it detects any issues:
 ```
 
 
-`Warning: use 'msg, closed := <-msgCh' instead at yourfile.go:line:column`
+`Warning: use 'msg, closed := <-msgCh' instead`
 
 ## Example
+> [!NOTE]
+> After cloning the repository `make example` will run without any installation
+
 Given the following Go code:
 
 ```go
@@ -75,7 +78,7 @@ When you run the linter:
 
 ```bash
 
-./linter main.go
+./linter ./test
 ```
 You will receive the following warning:
 
