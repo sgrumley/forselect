@@ -85,8 +85,8 @@ You will receive the following warning:
 `Warning: use 'msg, closed := <-msgCh' instead at main.go:8:9`
 
 ## Ongoing
-[x] Working linter
-[ ] Tests
-[ ] Review wording
-[ ] Optimize AST traversal
-[ ] Review README
+- [x] Working linter
+- [ ] Tests
+- [ ] Review wording
+- [ ] Optimize AST traversal
+- [ ] Review README
