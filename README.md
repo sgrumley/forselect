@@ -45,9 +45,9 @@ This will create an executable named linter.
 The linter can be used via the [Module Plugin System](https://golangci-lint.run/plugins/module-plugins) or via [Go Plugin System](https://golangci-lint.run/plugins/go-plugins)
 ```bash
 ./linter yourfile.go
-The linter will scan all files in the directory and print warnings in the following format if it detects any issues:
 ```
 
+The linter will scan all files in the directory and print warnings in the following format if it detects any issues:
 
 `Warning: use 'msg, closed := <-msgCh' instead`
 
