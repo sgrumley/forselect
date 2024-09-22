@@ -42,8 +42,7 @@ go build -o linter linter.go
 This will create an executable named linter.
 
 ## Usage
-To use the linter, provide the path to the Go file you want to lint:
-
+The linter can be used via the [Module Plugin System](https://golangci-lint.run/plugins/module-plugins) or via [Go Plugin System](https://golangci-lint.run/plugins/go-plugins)
 ```bash
 ./linter yourfile.go
 The linter will scan the file and print warnings in the following format if it detects any issues:
@@ -82,3 +81,9 @@ You will receive the following warning:
 
 `Warning: use 'msg, closed := <-msgCh' instead at main.go:8:9`
 
+## Ongoing
+[x] Working linter
+[ ] Tests
+[ ] Review wording
+[ ] Optimize AST traversal
+[ ] Review README
